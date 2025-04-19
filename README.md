@@ -12,7 +12,8 @@ ___________________________________
 
 ❔**How to**
 
-If you want just to use app on mobile device and not to work with source code you can download it HERE.
+̶I̶f̶ ̶y̶o̶u̶ ̶w̶a̶n̶t̶ ̶j̶u̶s̶t̶ ̶t̶o̶ ̶u̶s̶e̶ ̶a̶p̶p̶ ̶o̶n̶ ̶m̶o̶b̶i̶l̶e̶ ̶d̶e̶v̶i̶c̶e̶ ̶a̶n̶d̶ ̶n̶o̶t̶ ̶t̶o̶ ̶w̶o̶r̶k̶ ̶w̶i̶t̶h̶ ̶s̶o̶u̶r̶c̶e̶ ̶c̶o̶d̶e̶ ̶y̶o̶u̶ ̶c̶a̶n̶ ̶d̶o̶w̶n̶l̶o̶a̶d̶ ̶i̶t̶ ̶H̶E̶R̶E̶.
+I haven't made APK version, maybe will do it later
 
 ___________________________________
 
