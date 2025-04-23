@@ -1,0 +1,243 @@
+MDScreenManager:
+    
+
+    ### ===== Main Screen ===== ###
+    MDScreen:
+        name: 'main'
+        md_bg_color: self.theme_cls.backgroundColor
+
+
+        ## === TopApp bar === ##
+        
+        ## Appbar
+        MDTopAppBar:
+            type: 'small'
+            size_hint_y: 0.1
+            pos_hint: {"center_x": 0.5, "top": 1}
+
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'theme-light-dark'
+                    on_release: app.switch_theme()
+
+            MDTopAppBarTitle:
+                pos_hint: {"center_x": 0.5}
+                text: "Y2M Pocket"
+
+            MDTopAppBarTrailingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'cog'
+                    on_release:
+                        root.transition.direction = 'left'
+                        root.current = 'settings'
+
+        ## Dividers
+        MDDivider:
+            thickness: dp(10)
+            pos_hint: {"center_x": 0.5, "top": 0.9}
+            size_hint_x: 1
+
+        MDDivider:
+            thickness: dp(10)
+            pos_hint: {"center_x": 0.5, "top": 0.899}
+            size_hint_x: 1
+        
+
+
+        ## === Input field === ##
+        
+        ## Welcome text
+        MDLabel:
+            text: 'Use YouTube, SoundCloud or YTMusic links to download songs, playlists or videos.'
+            halign: 'center'
+            padding: dp(20)
+            pos_hint: {"center_x": 0.5, "top": 1.3}
+            font_style: 'Title'
+            role: 'medium'
+
+
+        ## Input field and proceed button
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.85
+            spacing: dp(15)
+            pos_hint: {"center_x": 0.5}
+
+            ## Input field
+            MDTextField:
+                id: input_link
+                mode: 'outlined'
+                size_hint_x: 0.6
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                MDTextFieldHintText:
+                    text: 'Enter the link'
+
+                MDTextFieldLeadingIcon:
+                    icon: 'link'
+            
+            ## Proceed button
+            MDFabButton:
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+                icon: "magnify"
+                on_release: app.proceed()
+        
+        ## Divider
+        MDDivider:
+            thickness: dp(6)
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            size_hint_x: 0.95                
+
+
+
+        ## === Content information === ##
+        MDBoxLayout:
+            #md_bg_color: [0, 0, 0, 0.2]
+            size_hint: 0.9, 0.25
+            pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            spacing: dp(5)
+            padding: dp(20)
+            orientation: 'horizontal'
+
+            ## Album cover
+            FitImage:
+                id: cover
+                size: "150dp", "150dp"
+                size_hint: None, None
+                pos_hint: {"center_y": 0.5}
+                source: "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
+
+            ## Song information
+            MDLabel:
+                id: information
+                text: 'Hello! :3\nTo start please enter your link and press the proceed button!'
+                pos_hint: {"center_y": 0.5}
+                halign: 'center'
+
+
+        ## === Download === ##
+        ## Select format
+        MDSegmentedButton:
+            pos_hint: {"center_x": 0.5, "center_y": 0.175}
+            size_hint_x: 0.85
+            padding: dp(10)
+            
+            MDSegmentedButtonItem:
+                active: True
+                on_release: app.format_update('audio')
+                MDSegmentButtonLabel:
+                    text: 'Audio'
+            
+            MDSegmentedButtonItem:
+                on_release: app.format_update('video')
+                MDSegmentButtonLabel:
+                    text: 'Video'
+        
+        ## Download button
+        MDButton:
+            id: button_download
+            style: 'elevated'
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            disabled: True
+            on_release: app.call_download()
+
+            MDButtonIcon:
+                icon: 'download'
+            MDButtonText:
+                text: 'Download'
+        
+        ## ProgressBar
+        MDLinearProgressIndicator:
+            id: progress
+            size_hint: 1, 0.01
+            opacity: 0
+            type: "determinate"
+            pos_hint: {"center_x": 0.5, "bottom": 1}
+
+
+
+
+
+    ### ===== Settings Screen ===== ###
+    MDScreen:
+        name: 'settings'
+        md_bg_color: self.theme_cls.backgroundColor
+
+
+        ## === TopApp bar === ##
+        
+        ## Appbar
+        MDTopAppBar:
+            type: 'small'
+            size_hint_y: 0.1
+            pos_hint: {"center_x": 0.5, "top": 1}
+
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'arrow-left'
+                    on_release: 
+                        root.transition.direction = 'right'
+                        root.current = 'main'
+
+            MDTopAppBarTitle:
+                pos_hint: {"center_x": 0.5}
+                text: "Settings"
+                
+
+            MDTopAppBarTrailingButtonContainer:
+                MDActionTopAppBarButton:
+                    on_release: app.github()
+                    icon: 'github'
+                    
+
+        ## Dividers
+        MDDivider:
+            thickness: dp(10)
+            pos_hint: {"center_x": 0.5, "top": 0.9}
+            size_hint_x: 1
+
+        MDDivider:
+            thickness: dp(10)
+            pos_hint: {"center_x": 0.5, "top": 0.899}
+            size_hint_x: 1
+
+        
+
+
+        ## === Set save directory === ##
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.85
+            spacing: dp(15)
+            pos_hint: {"center_x": 0.5}
+
+            ## Current directory
+            MDTextField:
+                id: current_dir
+                mode: 'outlined'
+                size_hint_x: 0.6
+                pos_hint: {"center_x": 0.5, "center_y": 0.8}
+                readonly: True
+                text: 'path/to/your/save/folder'
+
+                MDTextFieldHintText:
+                    text: 'Current save directory'
+            
+            ## Select directory button
+            MDFabButton:
+                pos_hint: {"center_x": 0.5, "center_y": 0.8}
+                icon: "folder"
+                on_release: app.select_directory()
+        
+
+
+
+        ## Version info
+        MDLabel:
+            pos_hint: {"center_x": 0.5, "center_y": 0.025}
+            text: "Y2M Pocket v 1.1"
+            halign: 'center'
+            theme_text_color: "Secondary"
+            padding: dp(25)
+            font_style: 'Title'
+            role: 'small'
