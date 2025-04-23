@@ -33,6 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 - Fixed app crash if link was invalid.
 - Fixed UI design.
+- Source code looks better now.
 
 
 ## [1.0] - 2025-04-19
