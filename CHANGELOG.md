@@ -8,15 +8,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ### Will be added
 
-- Add progress bar.
 - Fix duration format for SoundCloud links.
 - Function to choose the quality.
 
 ### Will be fixed
 
-- Fix app crash if link is invalid.
+- ???
 
 
-## [1.0] - 2024-10-26
+## [1.0] - 2025-04-24
+
+### Added
+
+- Dark and light app themes.
+- Information screen replased with better settings screen.
+- Added download directory select.
+- A lot of UI details.
+- Progressbar.
+- Added threading for proceed button and procceses.
+- Song/album and videos crop.
+- Notifications.
+
+### Will be fixed
+
+- Fixed app crash if link was invalid.
+- Fixed UI design.
+
+
+## [1.0] - 2025-04-19
 
 - Release of the first version of the app.
