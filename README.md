@@ -25,9 +25,5 @@ pip install kivy requests https://github.com/kivymd/KivyMD/archive/master.zip th
 ```
 <br><br>
 ✳📱**Mobile version**
-If you are looking for mobile version of the app you can download it here. (not ready yet, will be here asap)
-<br><br>
-<br><br>
-<br><br>
 
-by CBK
+If you are looking for mobile version of the app you can download it here. (not ready yet, will be here asap)
