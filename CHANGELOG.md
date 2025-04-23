@@ -29,7 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 - Song/album and videos crop.
 - Notifications.
 
-### Will be fixed
+### Fixed
 
 - Fixed app crash if link was invalid.
 - Fixed UI design.
