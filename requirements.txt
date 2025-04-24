@@ -1,0 +1,4 @@
+kivy
+requests
+https://github.com/kivymd/KivyMD/archive/master.zip
+yt_dlp
