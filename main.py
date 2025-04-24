@@ -61,10 +61,6 @@ class MainApp(MDApp):
         self.root.ids.current_dir.text = settings['save_folder'] # Save folder path
 
 
-
-
-
-
     ### ===== File manager ===== ###
 
     def select_directory(self):
@@ -118,14 +114,8 @@ class MainApp(MDApp):
                 size_hint_x=0.8,
             )
             notification.open()
-
-
-
             return None
-        
-
-
-
+     
 
 
     ### ===== Buttons ===== ###
@@ -157,29 +147,7 @@ class MainApp(MDApp):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ### ===== Information request ===== ###
+    ### ===== File download ===== ###
 
     def download_file(self, url, format):
         settings = load_settings()
@@ -227,8 +195,6 @@ class MainApp(MDApp):
         except Exception as e:
             print(f"Error: {e}")
 
-
-
     def download(self, url, format):
         print("Please wait...")
         if not url:
@@ -247,8 +213,6 @@ class MainApp(MDApp):
         download_thread = threading.Thread(target=self.download_file, args=(url, format))
         download_thread.start()
 
-
-
     def call_download(self):
         global format
         url = self.root.ids.input_link.text.strip()
@@ -257,26 +221,14 @@ class MainApp(MDApp):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ### ===== Information request ===== ###
     def duration(self, time):
         if time is None:
             return "Unknown"
+        
+        # Format time for SoundCloud songs
+        time = int(time)
+        print(time)
 
         hours = time // 3600 # Получаем ЦЕЛЫЕ часы без остатка
         minutes = (time % 3600) // 60 # От остатка часов получаем ЦЕЛЫЕ минуты
@@ -432,25 +384,6 @@ class MainApp(MDApp):
         self.root.ids.button_download.disabled = True
         self.root.ids.information.text = "Please wait..."
         self.root.ids.cover.source = "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
