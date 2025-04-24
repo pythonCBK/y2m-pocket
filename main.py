@@ -32,6 +32,7 @@ def save_settings(settings):
 
 ### ===== Variables ===== ###
 format = "audio"
+logo_image = "assets/logo.png"
 
 ### ===== App ===== ###
 class MainApp(MDApp):
@@ -59,11 +60,6 @@ class MainApp(MDApp):
 
         self.title = "Y2M Pocket" # App title
         self.root.ids.current_dir.text = settings['save_folder'] # Save folder path
-
-
-
-
-
 
     ### ===== File manager ===== ###
 
@@ -122,11 +118,6 @@ class MainApp(MDApp):
 
 
             return None
-        
-
-
-
-
 
     ### ===== Buttons ===== ###
 
@@ -154,30 +145,6 @@ class MainApp(MDApp):
     # GitHub btn
     def github(self):
         webbrowser.open("https://github.com/pythonCBK/y2m-pocket")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     ### ===== Information request ===== ###
 
@@ -255,24 +222,6 @@ class MainApp(MDApp):
 
         self.download(url, format)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ### ===== Information request ===== ###
     def duration(self, time):
         if time is None:
@@ -289,8 +238,6 @@ class MainApp(MDApp):
         else:
             return f"{minutes}:{seconds:02}"
 
-
-    
     def information_request(self):
 
         # Get text from input field
@@ -378,7 +325,7 @@ class MainApp(MDApp):
 
             def ui_error(dt):
                 self.root.ids.information.text = "Please specified the save folder in settings!"
-                self.root.ids.cover.source = "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
+                self.root.ids.cover.source = logo_image
 
             Clock.schedule_once(ui_error)
             return
@@ -391,7 +338,7 @@ class MainApp(MDApp):
 
             def ui_error(dt):
                 self.root.ids.information.text = "Please insert the link!"
-                self.root.ids.cover.source = "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
+                self.root.ids.cover.source = logo_image
 
             Clock.schedule_once(ui_error)
             return
@@ -403,7 +350,7 @@ class MainApp(MDApp):
 
             def ui_error(dt):
                 self.root.ids.information.text = "Something happened when we were collecting information!"
-                self.root.ids.cover.source = "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
+                self.root.ids.cover.source = logo_image
 
             Clock.schedule_once(ui_error)
             return
@@ -431,27 +378,6 @@ class MainApp(MDApp):
 
         self.root.ids.button_download.disabled = True
         self.root.ids.information.text = "Please wait..."
-        self.root.ids.cover.source = "https://litterbox.catbox.moe/resources/qts/1458602218407.png"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        self.root.ids.cover.source = logo_image
 
 MainApp().run()
