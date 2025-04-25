@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ### Will be added
 
+- Mobile version (not soon)
 - Function to choose the quality.
 
 ### Will be fixed
